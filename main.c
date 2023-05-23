@@ -19,7 +19,7 @@ int main(void)
 		{
 			if (isatty(STDIN_FILENO))
 				PRINT("\n");
-			return(1);
+			return (1);
 		}
 		if (split_line(&data) < 0)
 		{
