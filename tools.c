@@ -47,25 +47,25 @@ void *fill_an_array(void *a, int el, unsigned int len)
  */
 char *_getenv(char *path_name)
 {
-        char **environ_cursor, *env_ptr, *name_ptr;
+	char **environ_cursor, *env_ptr, *name_ptr;
 
-        environ_cursor = environ;
-        while (*environ_cursor)
-        {
-                env_ptr = *environ_cursor;
-                name_ptr = path_name;
-                while (*env_ptr == *name_ptr)
-                {
-                        if (*env_ptr == '=')
-                                break;
-                        env_ptr++;
-                        name_ptr++;
-                }
-                if ((*env_ptr == '=') && (*name_ptr == '\0'))
-                        return (env_ptr + 1);
-                environ_cursor++;
-        }
-        return (NULL);
+	environ_cursor = environ;
+	while (*environ_cursor)
+	{
+		env_ptr = *environ_cursor;
+		name_ptr = path_name;
+		while (*env_ptr == *name_ptr)
+		{
+			if (*env_ptr == '=')
+				break;
+			env_ptr++;
+			name_ptr++;
+		}
+		if ((*env_ptr == '=') && (*name_ptr == '\0'))
+			return (env_ptr + 1);
+		environ_cursor++;
+	}
+	return (NULL);
 }
 
 /**
