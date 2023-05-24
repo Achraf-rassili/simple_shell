@@ -152,7 +152,10 @@ int read_line(sh_t *data)
 	{
 		read_st = read(STDIN_FILENO, &c, 1);
 		if (read_st == 0)
+		{
+			free(data->line);
 			return (FAIL);
+		}
 		*csr_ptr++ = c;
 		if (c == '\n')
 		{
